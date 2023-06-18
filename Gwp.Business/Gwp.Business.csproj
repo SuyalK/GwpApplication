@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gwp.DAL\Gwp.DAL.csproj" />
+    <ProjectReference Include="..\Gwp.Model\Gwp.Model.csproj" />
+  </ItemGroup>
+
+</Project>
