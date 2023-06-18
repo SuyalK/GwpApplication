@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Gwp.Business;
+using Gwp.Model;
 
 namespace GwpApplication.Controllers
 {
@@ -18,12 +19,12 @@ namespace GwpApplication.Controllers
         }
 
         [HttpPost]
-        [Route("api/gwp/avg")]
-        public IActionResult CalculateAverageGwp(string country, string[] lineOfBusinesses)
+        [Route("server/api/gwp/avg")]
+        public IActionResult CalculateAverageGwp(CalculateAverageGwpRequest calculateAverageGwpRequest)
         {
             try
             {
-                var lobAverageGwp = _gwpCalculation.CalculateAverageGwp(country, lineOfBusinesses);
+                var lobAverageGwp = _gwpCalculation.CalculateAverageGwp(calculateAverageGwpRequest.Country, calculateAverageGwpRequest.LineOfBusinesses);
 
                 return Ok(lobAverageGwp);
             }
